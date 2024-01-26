@@ -60,7 +60,7 @@ const {createApp} = Vue
                 let thumb = document.querySelector(".thumb").classList.remove("active");
                 
 
-                if(this.currentSlide > this.slides.length - 1){
+                if(this.currentSlide >= this.slides.length ){
                     this.currentSlide = 0
                     this.currentTitle = 0
                     this.currentText = 0
@@ -82,7 +82,11 @@ const {createApp} = Vue
                     this.currentText = this.slides.length - 1
                 }
             },
-
+            choseImg(index){
+                this.currentSlide = index
+                this.currentText = index
+                this.currentTitle = index
+            }
         }
         
     }).mount("#app")

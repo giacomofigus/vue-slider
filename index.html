@@ -31,8 +31,9 @@
                     <div class="next" @click="nextImg"></div>
 
                     <!-- Inserire le immagini all'interno delle thumb tramite un ciclo e mettere la classe active all'immagine selezionata  -->
-                    <div v-for="(slide, index) in slides" :class="{active : currentSlide == index}"  class="thumb">
-                        <img :src="slide.image" alt="slides.title" />
+                    <div v-for="(slide, index) in slides" :class="{active : currentSlide == index}"  class="thumb" >
+                        <!-- Al click di un immagine appare nella pagina principale -->
+                        <img @click="choseImg(index)" :src="slide.image" alt="slides.title" />
                     </div>
                     
                 </div>
