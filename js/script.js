@@ -19,6 +19,7 @@ const {createApp} = Vue
                 currentSlide: 0,
                 currentText: 0,
                 currentTitle: 0,
+                
                 slides: [
                     {
                             image: 'img/01.webp',
@@ -55,11 +56,19 @@ const {createApp} = Vue
                 this.currentTitle++
                 this.currentText++
 
+                
+                let thumb = document.querySelector(".thumb").classList.remove("active");
+                
+
                 if(this.currentSlide > this.slides.length - 1){
                     this.currentSlide = 0
                     this.currentTitle = 0
                     this.currentText = 0
                 }
+
+                
+
+
                 
             },
             prevImg(){
@@ -72,7 +81,8 @@ const {createApp} = Vue
                     this.currentTitle = this.slides.length - 1
                     this.currentText = this.slides.length - 1
                 }
-            }
+            },
+
         }
         
     }).mount("#app")

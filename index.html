@@ -30,22 +30,11 @@
                     <div class="prev" @click="prevImg"></div>
                     <div class="next" @click="nextImg"></div>
 
-                    <!-- Inserire le immagini all'interno delle thumb tramite un ciclo  -->
-                    <div class="thumb active">
-                        <img src="img/01.webp" alt="Spiderman" />
+                    <!-- Inserire le immagini all'interno delle thumb tramite un ciclo e mettere la classe active all'immagine selezionata  -->
+                    <div v-for="(slide, index) in slides" :class="{active : currentSlide == index}"  class="thumb">
+                        <img :src="slides.image" alt="slides.title" />
                     </div>
-                    <div class="thumb">
-                        <img src="img/02.webp" alt="Ratchet & Clank" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/03.webp" alt="Fortnite" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/04.webp" alt="Stray" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/05.webp" alt="Avengers" />
-                    </div>
+                    
                 </div>
 
             </div>
