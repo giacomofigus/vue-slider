@@ -16,7 +16,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item">
+                <div class="item" @mouseover="stopAutoSlider" @mouseleave="autoSlider">
 
                     <!-- Inserire l'immagine in modo che sia dinamica, quindi dichiarare una variabile dal valore 0 che risulti come la posizione dell'immagine di riferimento  -->
                     <img v-bind:src="slides[currentSlide].image" alt="Spiderman" />

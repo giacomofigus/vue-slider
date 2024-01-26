@@ -19,6 +19,7 @@ const {createApp} = Vue
                 currentSlide: 0,
                 currentText: 0,
                 currentTitle: 0,
+                autoScroll: null,
                 
                 slides: [
                     {
@@ -50,7 +51,12 @@ const {createApp} = Vue
             
         },
 
+        created(){
+            this.autoSlider()
+        },
+
         methods: {
+            
             nextImg(){
                 this.currentSlide++
                 this.currentTitle++
@@ -65,11 +71,6 @@ const {createApp} = Vue
                     this.currentTitle = 0
                     this.currentText = 0
                 }
-
-                
-
-
-                
             },
             prevImg(){
                 this.currentSlide--
@@ -86,7 +87,18 @@ const {createApp} = Vue
                 this.currentSlide = index
                 this.currentText = index
                 this.currentTitle = index
+            },
+            autoSlider(){
+                this.autoScroll = setInterval(() => {
+                    this.nextImg()
+                }, 3000);
+            },
+            stopAutoSlider(){
+                clearInterval(this.autoScroll)
             }
+
+            
+
         }
         
     }).mount("#app")
